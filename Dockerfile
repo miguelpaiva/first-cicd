@@ -4,7 +4,7 @@ LABEL maintainer="Miguel Miranda"
 WORKDIR  /usr/src/app
 
 COPY package*.json ./
-RUN npm install
+RUN yarn
 
 COPY src ./src
 
@@ -18,4 +18,4 @@ COPY --from=BUILDER /usr/src/app ./
 
 EXPOSE 9999
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
